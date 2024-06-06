@@ -31,6 +31,12 @@ Tasks:
     * Create a function that takes an argument of any type and outputs a message about its type using the typeof operator.
     * Create a function that checks the type of a variable and outputs the message "This is a number," "This is a string," or "This is another type" using the typeof operator.
 
+8) Additional tasks
+    * Create a function that accepts a date of birth in YYYY-MM-DD format and returns the person's age as of today.
+
+    * Create a function that accepts two numbers: min and max, and returns an array of ten random integers between these values ​​(inclusive). These numbers must be unique.
+
+    * Create a function that accepts an array of objects, each of which contains two fields: date (date in YYYY-MM-DD format) and value (numerical value). The function should return a new array containing objects with the largest value for each unique month. Objects should be sorted by month in ascending order.
 
 Practices in using Math, string metods, rest operator and operator typeof.
 No issue during the working on code.    
