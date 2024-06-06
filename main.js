@@ -92,5 +92,81 @@ function showTypeOfVariable( arg ) {
 };
 showTypeOfVariable( "message" );
 
+// Additional task:
+// Create a function that accepts a date of birth in YYYY-MM-DD format and returns the person's age as of today.
+function showAge( date ) {
+    let now = new Date;
+    console.log( now.getFullYear() - +date.split( "-" )[ 0 ] )
+}
+showAge( " 2012-12-05 " );
+
+
+// Create a function that accepts two numbers: min and max, and returns an array of ten random integers between 
+// these values ​​(inclusive). These numbers must be unique.
+function showRangeNumnber( minNum, maxNum ) {
+    let arr = [];
+    for( let i = minNum; i <= maxNum; i++ ) {
+        if ( Math.floor( Math.random() * 10 ) > 5 && arr.length < 10 ) {
+            arr.push( i );
+        }
+    }
+    console.log( arr )
+};
+showRangeNumnber( 2, 53 );
+
+
+// Create a function that accepts an array of objects, each of which contains two fields: date (date in YYYY-MM-DD format) 
+// and value (numerical value). The function should return a new array containing objects with the largest value for each unique 
+// month. Objects should be sorted by month in ascending order.
+let dateArr = [
+    { date: '2024-12-25', value: 100 },
+    { date: '2024-03-21', value: 32 },
+    { date: '2024-09-27', value: 69 },
+    { date: '2024-01-02', value: 2 },
+    { date: '2024-07-30', value: 15 },
+    { date: '2024-08-20', value: 44 },
+    { date: '2024-06-14', value: 96 },
+    { date: '2024-02-25', value: 23 },
+    { date: '2024-11-14', value: 47 },
+    { date: '2024-12-26', value: 6 },
+    { date: '2024-05-06', value: 58 },
+    { date: '2024-04-03', value: 77 },
+    { date: '2024-01-12', value: 82 },
+    { date: '2024-09-13', value: 23 },
+    { date: '2024-10-15', value: 12 },
+    { date: '2024-05-09', value: 8 },
+    { date: '2024-06-13', value: 26 },    
+    { date: '2024-07-08', value: 39 },
+    { date: '2024-06-02', value: 41 },
+    { date: '2024-08-19', value: 84 },
+    { date: '2024-10-17', value: 20 },
+    { date: '2024-11-26', value: 91 }
+];
+
+function sortArrByDate( arr ) {
+    let result = [];
+    let copyArr = [ ...arr ];
+    copyArr.sort( ( a, b ) => {
+        return a.date.split( "-" )[1] - b.date.split( "-" )[1];
+    } );
+    
+    
+    for( let i = 1; i <= 12; i++ ) {
+        let res = [];
+        copyArr.forEach( item => {
+            if( +item.date.split( "-" )[1] === i ) {
+                res.push( item );
+            }
+        });
+        res.sort( (a, b) => {
+            return b.value - a.value;
+        } );
+        result.push( res[0] )
+    };
+
+    console.log(result);
+};
+
+sortArrByDate( dateArr );
 
 
